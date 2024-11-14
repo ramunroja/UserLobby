@@ -1,0 +1,154 @@
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    flex-wrap: wrap; 
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: auto;
+  }
+  
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    position: sticky;
+    margin: 0px auto;
+    padding: 10px;
+    top: 0;
+    z-index: 100;
+    background: #f5f5f5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  }
+    
+  .filter, .search-box, .refresh-button {
+    margin-left: 16px;
+  }
+  .colori{
+    color: #3f51b5;
+  }
+  @media (max-width: 768px) {
+    .title {
+      flex: 1 1 100%;
+      margin: 0;
+      text-align: center;
+      padding-bottom: 10px;
+    }
+  
+    .actions {
+      flex: 1 1 100%;
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .filter, .search-box, .refresh-button {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+  
+  .content {
+    padding: 20px;
+  }
+
+  .card-container {
+    margin: 20px auto;
+    border: 1px solid #868282;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px; 
+    padding: 16px;
+  }
+  
+  .dynamic-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  .two-column-container {
+    display: flex;
+    justify-content: space-between;  
+    gap: 0px;  
+  }
+  
+  .column {
+    flex: 1;  
+    padding: 10px;
+  }
+  
+  mat-card {
+    width: 100%;
+  }
+  
+  .responsive-card {
+    width: 100%; 
+    max-width: 600px; 
+    margin: 16px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  }
+
+  @media (max-width: 768px) {
+    .responsive-card {
+      padding: 16px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .responsive-card {
+      max-width: 80%; 
+      font-size: 1rem;
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    .responsive-card {
+      max-width: 600px; 
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .toolbar {
+      padding: 0 24px;
+    }
+    
+    .filter, .search-box {
+      min-width: 200px;
+    }
+  }
+
+  .container {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+.p-0{
+  padding: 0px !important;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.mat-spinner {
+  width: 50px;
+  height: 50px;
+}
+
+.actionbg{
+  border-radius: 10px;
+  position: relative;
+  margin: 20px auto;
+  padding: 10px;
+  background: WHEAT;
+}

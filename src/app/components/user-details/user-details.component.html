@@ -1,0 +1,13 @@
+<!-- <p>user-details</p> -->
+
+<div *ngIf="userDetails">
+    <h2>User Details</h2>
+    <p>Name: {{ userDetails.name }}</p>
+    <p>Email: {{ userDetails.email }}</p>
+    <p>Gender: {{ userDetails.gender }}</p>
+    <p>Status: {{ userDetails.status  }}</p>
+   </div>
+  
+  <div *ngIf="!userDetails">
+    <p>Loading user details...</p>
+  </div>

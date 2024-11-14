@@ -1,0 +1,63 @@
+<mat-toolbar color="primary" class="toolbar " >
+  <div class="actions sticky-header">
+    
+    <mat-form-field appearance="fill" class="filter">
+      <mat-label>Select Status</mat-label>
+      <mat-select [(ngModel)]="selectedStatus" (selectionChange)="onStatusChange($event)">
+        <mat-option value="all">All Status</mat-option>
+        <mat-option value="active">Active</mat-option>
+        <mat-option value="inactive">Inactive</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Search Box -->
+    <app-search-bar  (searchChange)="onSearchChange($event)"></app-search-bar>
+    <!-- Refresh Button -->
+    <button mat-icon-button aria-label="Refresh" (click)="onRefresh()">
+      <mat-icon class="colori">refresh</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+<div *ngIf="isLoading" class="spinner-container">
+  <mat-spinner></mat-spinner>
+</div>
+
+
+<!-- Main Content -->
+<div class="content" *ngIf="!isLoading">
+  
+  <div class="card-container">
+    <app-user-card *ngFor="let user of pagedUsers" [user]="user"></app-user-card>
+  </div>
+
+<div class="two-column-container">
+  <div class="column p-0">
+    <mat-card class="p-0">
+      <mat-card-content  style="padding: 10px;">
+        <!-- <button mat-raised-button color="primary" *ngIf="hasMoreUsers && !isLoading" (click)="loadUsers()">Show More</button>
+    <p *ngIf="isLoading">Loading...</p>
+    <p *ngIf="!hasMoreUsers && !isLoading">No more users to load</p> -->
+    <app-lazy-load-button
+    [isLoading]="isLoading"
+    [hasMoreData]="hasMoreUsers"
+    (loadMore)="loadUsers()"
+  ></app-lazy-load-button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="column p-0">
+    <mat-card class="p-0">
+    
+      <mat-card-content class="p-0">
+        <mat-paginator 
+      [pageSize]="limit"
+      [pageSizeOptions]="[5, 10, 20]"
+      [length]="filteredUsers.length"
+      (page)="onPageChange($event)"
+    ></mat-paginator>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+

@@ -1,0 +1,66 @@
+
+.user-card {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 10px;
+    border-radius: 8px;
+  }
+  
+  .admin-card {
+    background-color: #f9f9f9;
+    border-left: 4px solid #4caf50; 
+  }
+  
+  .guest-card {
+    background-color: #f4f4f4;
+    border-left: 4px solid #ff9800; 
+  }
+  
+  .user-card h3 {
+    margin: 0;
+    font-size: 1.5em;
+  }
+  
+  .user-card p {
+    margin: 5px 0;
+  }
+
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 16px; 
+  padding: 16px;
+}
+
+.font-b{
+  font-weight: 500;
+ }
+.dynamic-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+
+@media (max-width: 768px) {
+  .title {
+    text-align: center;
+    flex-basis: 100%;
+  }
+  
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .search-box, .filter {
+    width: 100%; 
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 960px) {
+  .card-container {
+    display: block !important;
+    grid-template-columns: 1fr;
+  }
+}

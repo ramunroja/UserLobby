@@ -1,0 +1,5 @@
+
+<select [(ngModel)]="selectedStatus" (change)="onFilterChange()">
+    <option value="">All Status</option>
+    <option *ngFor="let role of status" [value]="role">{{ status }}</option>
+  </select>
